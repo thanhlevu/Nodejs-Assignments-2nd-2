@@ -30,43 +30,52 @@
         margin-left: 20px;
     }
     textarea{
-        height: 150px;
+        height: 50px;
         width: 280px;
     }
     h3{
         text-align: center;
+    }
+    button{
+        display: block;
+        width: 100px;
+        margin: auto;
+    }
+    p{
+        color: red;
     }
 </style>
 </head>
 
 <body>
     <h3>FORM: Applying for an IT job</h3>
-
-    <form action="form.php" method="get" novalidate>
+    <form  method="get" novalidate onsubmit="Submit()" name="form_job">
         <fieldset>
             <legend>Personal Information</legend>
             Firstname:
             <input type="text" name="first_name" autofocus required>
-            <br><br>
+            <p id="first_name_error"></p>
             Lastname:
-            <input type="text" name="last_name" required><br><br>
+            <input type="text" name="last_name" required>
+            <p id="last_name_error"></p>
             Gender:
             <input type="radio" name="radio_male" value="male"/>Male
             <input type="radio" name="radio_female" value="female"/>Female
             <input type="radio" name="radio_others" value="others"/>Others<br><br>
-            Date of Birth:
-            <input type="Date" name="dob"/><br><br>
             Language:
             <input type="checkbox" name="checkbox_english" value="english"/>English
             <input type="checkbox" name="checkbox_finnish" value="finnish"/>Finnish<br><br>
             Email:
-            <input type="email" name="email" placeholder="abc@gmail.com" required><br><br>
+            <input type="email" name="email" placeholder="abc@gmail.com" required>
+            <p id="email_error"></p>
             Phone number:
-            <input type="tel" name="phone_number" placeholder="+358 xx xxx xxx" id="email" pattern="\+[0-9]{12}$"><br><br>
+            <input type="tel" name="phone_number" placeholder="+358 xx xxx xxx" id="email" pattern="\+[0-9]{12}$">
+            <p id="phone_number_error"></p>
             Address:
             <input type="text" name="address"><br><br>
             Postal code:
-            <input type="text" name="post_code" pattern="[0-9]{5}"><br><br>
+            <input type="text" name="post_code" pattern="[0-9]{5}">
+            <p id="post_code_error"></p>
             Social Number:
             <input type="password" name="social_number" required>
         </fieldset><br>
@@ -82,18 +91,12 @@
                 <option value="op6">Others</option>        
             </select><br><br>
             Experience:
-            <textarea></textarea><br><br>  
+            <textarea></textarea><br><br>
+            <p id="result"></p>
         </fieldset><br>
-        <input type="submit" name="Submit" onclick="Submit()"/>
     </form>
-    <script src="js/main.js">
-        
-        <script>
-function Submit() {
-    document.querySelector("body").style.backgroundColor = "red";
-}
-</script>
-    </script>
+    <button onclick="submit()">Submit</button>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
