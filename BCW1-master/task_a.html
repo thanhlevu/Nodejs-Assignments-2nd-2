@@ -1,0 +1,92 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Task A</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style>
+    form{
+        width: 400px;
+        margin: auto;
+    }
+    fieldset { 
+        display: block;
+        width: 400px;
+        background-color: yellow;
+        padding-top: 0.35em;
+        padding-bottom: 0.625em;
+        padding-left: 0.75em;
+        padding-right: 0.75em;
+        border: solid 2px black;
+    }
+    legend{
+        margin-left: 20px;
+    }
+    textarea{
+        height: 150px;
+        width: 280px;
+    }
+    h3{
+        text-align: center;
+    }
+</style>
+</head>
+
+<body>
+    <h3>FORM: Applying for an IT job</h3>
+
+    <form action="form.php" method="get">
+        <fieldset>
+            <legend>Personal Information</legend>
+            Firstname:
+            <input type="text" name="first_name" autofocus required>
+            <br><br>
+            Lastname:
+            <input type="text" name="last_name" required><br><br>
+            Gender:
+            <input type="radio" name="radio_male" value="male"/>Male
+            <input type="radio" name="radio_female" value="female"/>Female
+            <input type="radio" name="radio_others" value="others"/>Others<br><br>
+            Date of Birth:
+            <input type="Date" name="dob"/><br><br>
+            Language:
+            <input type="checkbox" name="checkbox_english" value="english"/>English
+            <input type="checkbox" name="checkbox_finnish" value="finnish"/>Finnish<br><br>
+            Email:
+            <input type="email" name="email" placeholder="abc@gmail.com" required><br><br>
+            Phone number:
+            <input type="tel" name="phone_number" placeholder="+358 xx xxx xxx" id="email" pattern="\+[0-9]{12}$"><br><br>
+            Address:
+            <input type="text" name="address"><br><br>
+            Postal code:
+            <input type="text" name="post_code" pattern="[0-9]{5}"><br><br>
+            Social Number:
+            <input type="password" name="social_number" required>
+        </fieldset><br>
+        <fieldset>
+            <legend>Work Experience</legend>
+            Major:
+            <select name="major">
+                <option value="op1">Mobile Solution</option>
+                <option value="op2">IoT</option>
+                <option value="op3">Smart System</option>
+                <option value="op4">Software</option>  
+                <option value="op5">Gaming</option>    
+                <option value="op6">Others</option>        
+            </select><br><br>
+            Experience:
+            <textarea></textarea><br><br>  
+        </fieldset><br>
+        <input type="submit" name="Submit"/>
+    </form>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
