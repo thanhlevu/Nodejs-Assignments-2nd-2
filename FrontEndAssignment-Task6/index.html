@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TASK 6</title>
+</head>
+<body>
+	<ul class="fruits">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li data-foodtype="squishy">Orange</li>
+        <li>Pear</li>
+        <li>Kiwi</li>
+        <li id="berry">Strawberry</li>
+    </ul>
+
+
+
+<script>
+
+//1
+console.log(document.getElementById('berry'));
+"I found the berry: "+document.getElementById('berry').innerHTML
+document.getElementById('berry').style.background = 'red';
+
+//2
+console.log(document.querySelector('li[data-foodtype="squishy"]'));
+"I found the fruit: "+document.querySelector('li[data-foodtype="squishy"]').innerHTML;
+document.querySelector('li[data-foodtype="squishy"]').style.backgroundColor = "orange";
+
+//3.1
+console.log(document.getElementsByTagName('li'));
+//3.2
+const fruits = document.getElementsByTagName('li');
+console.log("Using for loop here:");
+for (let i = 0; i < fruits.length; i++) {
+    if (fruits[i].innerHTML=="Pear") {
+        fruits[i].style.backgroundColor = "green";
+    };
+    fruits[i].style.width = "100px";
+    fruits[i].style.listStyle = "none";
+    console.log(fruits[i].innerHTML)};
+
+//4.1
+console.log(document.querySelectorAll('li'));
+//4.2
+const fruits1 = document.querySelectorAll('li');
+fruits1.forEach((fruitItem) => {
+    fruitItem.style.border = "1px solid black";
+    console.log(fruitItem.innerHTML);
+});
+</script>
+</body>
+</html>
